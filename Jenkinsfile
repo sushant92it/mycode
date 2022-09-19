@@ -1,6 +1,6 @@
 pipeline{  
     environment {
-    registry = "https://hub.docker.com/repository/docker/rahulmamdocker/psassignment"
+    registry = "https://hub.docker.com/repository/docker/rahulmamdocker"
     }
   agent any
   stages {
