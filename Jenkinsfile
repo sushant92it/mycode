@@ -1,6 +1,6 @@
 pipeline{  
     environment {
-    registry = "<<Your_Docker_Hub_Account/spring-demo>>"
+    registry = "https://hub.docker.com/repository/docker/rahulmamdocker/psassignment"
     }
   agent any
   stages {
