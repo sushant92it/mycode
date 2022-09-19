@@ -1,6 +1,6 @@
 pipeline{  
     environment {
-    registry = "sushantdocker/psassignment"
+    registry = "sushant92itdocker/psassignment"
     }
   agent any
   stages {
@@ -9,21 +9,21 @@ pipeline{
            steps {
                 
                    sh 'pwd'
-                   sh 'sudo docker build .'
+                   sh 'docker build .'
                       }
        }
        
       
        stage('Publish') {
            environment {
-               registryCredential = 'dockerhub'
+               registryCredential = 'docker-login'
            }
            steps{
               
               script {
                  
-                 docker.withRegistry('', registryCredential){
-                 def appimage = docker.build registry + ":$BUILD_NUBER"
+                 docker.withRegistry('', registryCredential) {
+                 def appimage = docker.build registry + ":$BUILD_NUMBER"
                  appimage.push()
                       
                   }
