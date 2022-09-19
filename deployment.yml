@@ -20,3 +20,6 @@ spec:
         resources:
           requests:
             cpu: 10m
+            
+     
+   
