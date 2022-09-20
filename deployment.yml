@@ -4,8 +4,9 @@ metadata:
   name: hello-deployment
   labels:
     role: app
+    version: "1.0"
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       role: app
@@ -13,13 +14,16 @@ spec:
     metadata:
       labels:
         role: app
+        version: "1.0"
     spec:
+      
       containers:
       - name: app
         image: image_id
         resources:
           requests:
             cpu: 10m
+        
             
      
    
