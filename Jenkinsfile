@@ -9,7 +9,7 @@ pipeline{
            steps {
                 
                    sh 'pwd'
-                   sh 'sudo docker build .'
+                   sh 'docker build .'
                       }
        }
        
