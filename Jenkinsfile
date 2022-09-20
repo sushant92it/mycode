@@ -16,7 +16,7 @@ pipeline{
       
        stage('Publish') {
            environment {
-               registryCredential = 'docker-login'
+               registryCredential = 'docker'
            }
            steps{
               
@@ -36,8 +36,8 @@ pipeline{
                    def image_id = registry + ":$BUILD_NUMBER"
                    sh "sed -i 's|image_id|$image_id|g' deployment.yml"
                    sh "kubectl apply -f deployment.yml -f service.yml"
-                   sh "kubectl rollout status deployment springboot"
-                   sh "kubectl get service springboot-svc"
+                   sh "kubectl rollout status deployment hello-deployment"
+                   sh "kubectl get service hello-svc"
                 }
            }
        }
